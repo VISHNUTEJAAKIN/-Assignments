@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey form</title>
+    <link rel="stylesheet" href="./Style.css">
+    <script>
+        function Submit(){
+          var first=document.getElementById("first");
+        var last=document.getElementById("last");
+        var DOB=document.getElementById('date');
+        var email=document.getElementById('txtemail');
+        var profession=document.getElementById('profession');
+        var number=document.getElementById('number');
+        var genders=document.getElementsByClassName("gender");
+        var country=document.getElementById("txtcountry");
+        if(first.value==""&&last.value==""&&DOB.value==""&&email.value==""&&profession.value==""&&number.value==""&&genders.length==0&&country=="")
+        {
+          alert(`enter all values`);
+        }
+        else{
+          var selected=[];
+        for(var i=0;i<genders.length;i++){
+          if(genders[i].checked){
+           selected+=genders[i].value;
+          }
+        }
+          alert(`
+          FirstName:${first.value}
+          LastName:${last.value}
+          Gender:${selected}
+          Country:${country.value}
+          Date-of-Birth:${DOB.value}
+          Email:${email.value}
+          profession:${profession.value}
+          Number:${number.value}`);
+        }
+        }
+     </script>
+    
+</head>
+<body>
+   <div class="event1" >
+    <div class="event2">
+        <h1> Customer survey form</h1>
+        <form class="feild" method="post">
+            <label>FirstName</label>
+            <input type="text" required id="first"><br><br>
+            <label>LastName</label>
+            <input type="text" required id="last"><br><br>
+            <label>Gender</label>
+            <input type="checkbox" value="Male" name="gender" class="gender">Male
+            <input type="checkbox" value="Fe-Male" name="gender" class="gender">Fe-Male
+            <input type="checkbox" value="Others" name="gender" class="gender">Others<br><br>
+            <label>country</label>
+            <select id="txtcountry">
+              <option>select country</option>
+              <option value="Hyderbad">Hyderbad</option>
+              <option value="chennai">chennai</option>
+              <option value="Benglaur">Benglaur</option>
+            </select><br><br>
+            <label>Date of Birth</label>
+            <input type="date" required id="date"><br><br>
+            <label>Email</label>
+            <input type="email" required id="txtemail"><br><br>
+            <label>profession</label>
+            <input type="text" required id="profession"><br><br>
+            <label>MobileNumber</label>
+            <input type="tel" required id="number"><br><br>
+            <div class="button">
+            <button type="submit" style="color: blue;" onclick="Submit()">Submit</button>
+            <button type="reset" style="color: blue;">Reset</button>
+           </div>
+        </form>
+       </div>
+   </div>
+</body>
+</html>
+

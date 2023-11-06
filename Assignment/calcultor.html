@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <link rel="stylesheet" href="caltor.css">
+  <link rel="stylesheet" href="calcultor.js">
+  <!--java script code-->
+  <script>
+    //function that display value 
+    function dis(val) {
+        document.getElementById("result").value+=val
+        
+    }
+    //function digit and return result
+    function solve(){
+      var x= document.getElementById("result").value
+      var y=eval(x)
+      document.getElementById("result").value=y
+    }
+    //function clear the display
+    function content(){
+      document.getElementById("result").value=  ""
+
+    }
+</script>
+  
+</head>
+<body>
+<div class="Container">
+    <table class="div">
+      <tr>
+        <td colspan="3"><input type="text" id="result"/></td>
+        <td><input type="button" value="AC" onclick="content()"   id="btn"/></td>
+      </tr>
+      <!--creating a button assign value each button-->
+      <tr class="event">
+        <!--function dis to call display -->
+        <td><input type="button" value="7" onclick="dis('7')" /></td>
+        <td><input type="button" value="8" onclick="dis('8')" /></td>
+        <td><input type="button" value="9" onclick="dis('9')" /></td>
+        <td class="button"><input type="button" value="+" onclick="dis('+')" id="button"/></td>
+      </tr>
+      <tr class="event">
+        <td><input type="button" value="4" onclick="dis('4')" /></td>
+        <td><input type="button" value="5" onclick="dis('5')" /></td>
+        <td><input type="button" value="6" onclick="dis('6')" /></td>
+        <td class="button"><input type="button" value="-" onclick="dis('-')" id="button" /></td>
+      </tr>
+      <tr  class="event">
+        <td><input type="button" value="1" onclick="dis('1')" /></td>
+        <td><input type="button" value="2" onclick="dis('2')" /></td>
+        <td><input type="button" value="3" onclick="dis('3')" /></td>
+        <td><input type="button" value="/" onclick="dis('/')" id="button" /></td>
+      </tr>
+      <tr  class="event">
+        <td><input type="button" value="." onclick="dis('.')" /></td>
+        <td><input type="button" value="0" onclick="dis('0')" /></td>
+        <td><input type="button" value="=" onclick="solve('')" /></td>
+        <td class="button"><input type="button" value="*" onclick="dis('*')"  id="button"/></td>
+      </tr>
+      
+    </table>
+</div>
+</body>
+</html>
